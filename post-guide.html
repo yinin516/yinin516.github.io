@@ -1,0 +1,88 @@
+### 📝 GitHub 靜態網站發文教學（才1專用）
+
+這份教學文件教你如何在你用 GitHub 架設的網站上，像 Facebook 一樣發文，包括貼文、圖片、影片與 YouTube 影片嵌入方式。
+
+---
+
+## 🔧 發文模板（最基本）
+
+```html
+<div class="post">
+  <div class="time">🕒 2025/06/15 下午 3:45</div>
+  <div class="content">
+    <p>這是我今天的一篇貼文內容。</p>
+  </div>
+</div>
+```
+
+---
+
+## 🖼️ 發文內加圖片
+
+```html
+<div class="post">
+  <div class="time">🕒 2025/06/16 下午 3:00</div>
+  <div class="content">
+    <p>今天測試發文能不能加圖片：</p>
+    <img src="https://i.imgur.com/u6z9Z2z.jpg" alt="測試圖片" style="max-width:100%; border-radius:8px;">
+    <p>圖片來自 imgur，上傳後複製圖片網址就能使用。</p>
+  </div>
+</div>
+```
+
+**提示：** 可使用 [imgur.com](https://imgur.com) 上傳圖片 → 複製圖片網址 → 貼到 `src="..."`
+
+---
+
+## ▶️ 發文內嵌 YouTube 影片
+
+```html
+<div class="post">
+  <div class="time">🕒 2025/06/16 下午 3:10</div>
+  <div class="content">
+    <p>我覺得這支影片超有啟發：</p>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+      title="YouTube video" frameborder="0" allowfullscreen
+      style="border-radius:12px;"></iframe>
+  </div>
+</div>
+```
+
+**注意：** YouTube 嵌入網址需為 `https://www.youtube.com/embed/影片代碼`
+
+---
+
+## 🎞️ 發文加影片（自拍 MP4）
+
+```html
+<div class="post">
+  <div class="time">🕒 2025/06/16 下午 3:20</div>
+  <div class="content">
+    <p>這是我用手機拍的影片：</p>
+    <video controls style="max-width:100%; border-radius:12px;">
+      <source src="https://yourdomain.com/path-to-video.mp4" type="video/mp4">
+      您的瀏覽器不支援影片播放。
+    </video>
+  </div>
+</div>
+```
+
+**補充：** 若要使用此方式，影片需上傳至可公開存取的位置，例如 GitHub 上 `/assets/` 資料夾、Cloudflare R2、其他雲端。
+
+---
+
+## 💡 建議貼文順序
+
+將新的貼文區塊 `<div class="post">...</div>` 貼在分類頁的最上方，讓最新貼文排在最前面。
+
+---
+
+## ✅ 建議未來補強
+
+* 建立 `/assets/` 目錄：可用來放圖片、影片等媒體素材
+* 可製作圖片上傳工具（例如 imgur API + Notion 整合）
+* 進階使用 Firebase / Netlify CMS 來登入後台發文
+
+---
+
+如需自動產生貼文格式、圖片上傳協助或網域綁定，可找 ChatGPT 協助 😎
